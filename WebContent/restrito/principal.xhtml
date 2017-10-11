@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Principal</title>
+</h:head>
+<h:body>
+	<h1>Gerenciador Spring Security</h1>
+	
+	Usuário logado: <b> #{request.remoteUser} </b> 
+	<br />
+	<h:form>
+		<h:panelGroup rendered="#{request.isUserInRole('ROLE_ADMINISTRADOR')}">
+			<h:graphicImage library="imagens" name="administrativo16.png" />
+			<h:link value=" Cadastro de Usuário" outcome="/admin/cadastroUsuario" />
+		</h:panelGroup>
+		<br/>
+		<a onclick="document.location='#{request.contextPath}/j_spring_security_logout'" title="Sair" > 
+			<h:graphicImage library="imagens" name="logout16.png" />
+			
+		</a>
+	
+	</h:form>
+</h:body>
+</html>
