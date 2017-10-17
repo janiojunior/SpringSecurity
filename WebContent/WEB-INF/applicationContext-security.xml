@@ -15,8 +15,11 @@
 			always-use-default-target="true"
 			default-target-url="/restrito/principal.xhtml"
 			authentication-failure-url="/publico/login.xhtml?login_error=1"/>
+			
 		<access-denied-handler error-page="/publico/acessoNegado.xhtml"/>			
+		
 		<logout/>
+		
 		<remember-me/>		
 	</http>
 
